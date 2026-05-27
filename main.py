@@ -21,8 +21,8 @@ if __name__ == "__main__":
     print(f'Média: {calcular_media([8.5, 9.0, 7.5])}')
 
 
-ef buscar_usuario(user_id):
+def buscar_usuario(user_id):
     conn = sqlite3.connect('banco.db')
     cursor = conn.cursor()
-    cursor.execute(f"SELECT * FROM users WHERE id={user_id}")
+    cursor.execute("SELECT * FROM users WHERE id=?", (user_id,))
     return cursor.fetchone()
