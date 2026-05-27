@@ -11,6 +11,7 @@ def calcular_media(notas: list) -> float:
         raise ValueError("Lista de notas não pode ser vazia")
     return sum(notas) / len(notas)
 
+
 if __name__ == "__main__":
     
     print(saudacao("Aluno FATEC"))
