@@ -1,3 +1,4 @@
+import sqlite3
 def saudacao(nome: str) -> str:
     """Retorna uma saudação segura."""
     if not isinstance(nome, str):
@@ -16,3 +17,11 @@ if __name__ == "__main__":
 
     print(saudacao("Aluno FATEC"))
     print(f'Média: {calcular_media([8.5, 9.0, 7.5])}')
+import sqlite3
+
+
+def buscar_usuario_vulneravel(user_id):
+    conn = sqlite3.connect("banco.db")
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM users WHERE id={user_id}")
+    return cursor.fetchone()
