@@ -59,11 +59,12 @@ jobs:
           pip install pytest flake8
 
       - name: Executar testes
-        run: pytest tests/ -v
+        run: |
+          export PYTHONPATH=.
+          pytest tests/ -v
 
       - name: Verificar qualidade do código
         run: flake8 . --max-line-length=120 --exclude=venv
-
   deploy-stage:
     name: '🚀 Deploy para Stage'
     runs-on: ubuntu-latest
