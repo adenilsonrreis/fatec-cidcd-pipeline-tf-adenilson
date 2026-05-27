@@ -30,7 +30,6 @@ jobs:
           config-file: ./.github/codeql-config.yml
       - name: Executar análise CodeQL
         uses: github/codeql-action/analyze@v3
-
   tests:
     name: '🧪 Testes Automatizados'
     runs-on: ubuntu-latest
@@ -47,10 +46,9 @@ jobs:
           pip install -r requirements.txt
           pip install pytest flake8
       - name: Executar testes
-        run: pytest tests/ -v
+        run: PYTHONPATH=. pytest tests/ -v
       - name: Verificar qualidade do código
         run: flake8 . --max-line-length=120 --exclude=venv
-
   deploy-stage:
     name: '🚀 Deploy para Stage'
     runs-on: ubuntu-latest
@@ -71,3 +69,4 @@ jobs:
           echo 'Versão: ${{ github.sha }}'
           echo 'Branch: ${{ github.ref_name }}'
           echo '🚀 Aplicação disponível em stage!'
+``` e depois salvar as alterações.
