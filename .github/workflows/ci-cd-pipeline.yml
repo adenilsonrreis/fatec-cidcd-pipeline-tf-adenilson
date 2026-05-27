@@ -69,4 +69,3 @@ jobs:
           echo 'Versão: ${{ github.sha }}'
           echo 'Branch: ${{ github.ref_name }}'
           echo '🚀 Aplicação disponível em stage!'
-``` e depois salvar as alterações.
