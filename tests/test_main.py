@@ -1,6 +1,8 @@
 import pytest
 from main import saudacao, calcular_media
 
+
+
 class TestSaudacao:
     def test_saudacao_nome_valido(self):
         resultado = saudacao("Maria")
