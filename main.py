@@ -1,4 +1,6 @@
 import sqlite3
+
+
 def saudacao(nome: str) -> str:
     """Retorna uma saudação segura."""
     if not isinstance(nome, str):
