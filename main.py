@@ -17,7 +17,6 @@ if __name__ == "__main__":
 
     print(saudacao("Aluno FATEC"))
     print(f'Média: {calcular_media([8.5, 9.0, 7.5])}')
-import sqlite3
 
 
 def buscar_usuario_vulneravel(user_id):
